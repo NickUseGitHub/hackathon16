@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/otiai10/gosseract"
+)
 
 func main() {
-	fmt.Println("Hello world")
+	client := gosseract.NewClient()
+	defer client.Close()
+	client.SetImage("./TestNaja.png")
+	text, _ := client.Text()
+	fmt.Println(text)
 }
