@@ -23,7 +23,7 @@ RUN apt-get install -y -qq \
 # downloaded traineddata under ${TESSDATA_PREFIX}/tessdata.
 
 WORKDIR /go/src/app
-COPY ./api .
+COPY ./app .
 
 RUN go get -d -v ./...
 RUN go install -v ./...
