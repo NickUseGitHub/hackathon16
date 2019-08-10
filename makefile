@@ -1,4 +1,4 @@
-main: dev
+main: dev-build
 
 dev:
 	docker-compose up
