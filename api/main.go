@@ -1,15 +1,17 @@
 package main
 
 import (
-	"fmt"
+	"net/http"
 
-	"github.com/otiai10/gosseract"
+	"github.com/gorilla/mux"
 )
 
 func main() {
-	client := gosseract.NewClient()
-	defer client.Close()
-	client.SetImage("./TestNaja.png")
-	text, _ := client.Text()
-	fmt.Println(text)
+	r := mux.NewRouter()
+	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte("Hello World!"))
+	})
+
+	http.ListenAndServe(":3000", r)
 }
