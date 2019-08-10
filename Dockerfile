@@ -17,8 +17,7 @@ ENV TESSDATA_PREFIX=/usr/share/tesseract-ocr
 # These {lang}.traineddata would b located under ${TESSDATA_PREFIX}/tessdata.
 RUN apt-get install -y -qq \
   tesseract-ocr-eng \
-  tesseract-ocr-deu \
-  tesseract-ocr-jpn
+  tesseract-ocr-tha
 # See https://github.com/tesseract-ocr/tessdata for the list of available languages.
 # If you want to download these traineddata via `wget`, don't forget to locate
 # downloaded traineddata under ${TESSDATA_PREFIX}/tessdata.
