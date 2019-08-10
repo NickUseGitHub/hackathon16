@@ -4,5 +4,7 @@ services:
     build:
       context: .
     command: ["app"]
+    volumes:
+      - ./assets:/go/src/app/assets
     ports:
       - 3000:3000

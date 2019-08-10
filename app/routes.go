@@ -22,6 +22,12 @@ var routeControllers = routes{
 		"/",
 		Index,
 	},
+	route{
+		"OCR",
+		"GET",
+		"/ocr",
+		OcrHandler,
+	},
 }
 
 func newRouter() *mux.Router {
